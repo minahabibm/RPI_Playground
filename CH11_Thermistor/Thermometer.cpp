@@ -38,11 +38,11 @@ int main(void) {
         float B = 3950;                                                                                     // B value of the thermal index of thermistor
         float T1 = 25;                                                                                      // reference temperature in Celsius
 
-        float tempK = 1  / (1 / (273.15 + t1) + log(Rt / R) / B);                                           // calculate the temperature in Kelvin
+        float tempK = 1  / (1 / (273.15 + T1) + log(Rt / R) / B);                                           // calculate the temperature in Kelvin
         float tempC = tempK - 273.15;                                                                       // convert the temperature to Celsius
         float tempF = tempC * 9 / 5 + 32;                                                                   // convert the temperature to Fahrenheit
 
-        printf("ADC value: %d, \tVoltage: %.2f V, \tTemperature_C : %.2fC, \tTemperature_F : %.2fC\n", adcValue, voltage, tempC, tempF);
+        printf("ADC value: %d, \tVoltage: %.2f V, \tTemperature_C : %.2fC, \tTemperature_F : %.2fF\n", adcValue, voltage, tempC, tempF);
 
         delay(100);
     }
